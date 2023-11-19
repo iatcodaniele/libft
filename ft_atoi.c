@@ -1,11 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/19 15:23:10 by diatco            #+#    #+#             */
+/*   Updated: 2023/11/19 16:32:21 by diatco           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int ft_is_space(char c)
-{
-    if((c >= 9 && c <= 13) || c == 32)
-        return 1;
-    return 0;
-}
+#include "libft.h"
 
 int ft_atoi(const char *str)
 {
@@ -13,25 +18,27 @@ int ft_atoi(const char *str)
     int res = 0;
     int sign = 1;
 
-    while(ft_is_space(str[i]) == 1)
+    char *str_c = (char *)str;
+
+    while(((str_c[i] != '\0') && (str_c[i] >= 9 && str_c[i] <= 13)) || (str_c[i] == 32))
     {
         i++;
     }
-    if(str[i] == '-' || str[i] == '+')
+    if(str_c[i] == '-' || str_c[i] == '+')
     {
-        if(str[i] == '-')
+        if(str_c[i++] == '-')
             sign *= -1;
     }
-
-    while(str[i])
+    while(str_c[i] && (str_c[i] >= '0' && str_c[i] <= '9'))
     {
-        if(str[i] >= 0 && str[i] <= 9)
-        {
-            res = res * 10;
-            res = res + (str[i++] - 48);
-        }
-        else
-            return (res * sign);
+        res = res * 10;
+        res = res + (str_c[i++] - 48);
     }
     return (res * sign);
 }
+
+/*int main()
+{
+    printf("%d\n", ft_atoi("\t\v\f\r\n \f-06050"));
+    printf("%d\n", atoi("\t\v\f\r\n \f-06050"));
+}*/

@@ -1,21 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/19 15:24:07 by diatco            #+#    #+#             */
+/*   Updated: 2023/11/19 16:10:52 by diatco           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-unsigned int ft_strlcat(char *dest, const char *src, size_t size)
+unsigned int ft_strlcat(char *dest, const char *src, unsigned int size)
 {
-    size_t destlen = ft_strlen(dest);
-    size_t totlen = 0;
+    unsigned int destlen = ft_strlen(dest);
+    unsigned int srclen = ft_strlen(src);
+    unsigned int i = 0;
 
-    totlen = destlen + ft_strlen(src);
-    if(destlen < size - 1)
+    if(destlen < size)
     {
-        size_t i = 0;
-        while(dest[destlen] != '\0' && destlen < size - destlen - 1)
+        srclen+= destlen;
+    }
+	else
+		srclen+= size;
+
+    while(src[i] != '\0' && (destlen + 1) < size)
         {
             dest[destlen++] = src[i++];
         }
-    }
-	else
-		return (size + ft_strlen(src));
     dest[destlen] = '\0';
-    return totlen;
+    return srclen;
 }
