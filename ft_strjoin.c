@@ -6,7 +6,7 @@
 /*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:39:31 by diatco            #+#    #+#             */
-/*   Updated: 2023/11/27 13:57:11 by diatco           ###   ########.fr       */
+/*   Updated: 2023/12/06 10:49:55 by diatco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,36 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *c;
-	unsigned int i = 0;
-	unsigned int j = 0;
+	char			*c;
+	unsigned int	i;
+	unsigned int	j;
 
+	i = 0;
+	j = 0;
 	c = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if(!c)
-		return NULL;
-	while(s1[i] != '\0')
+	if (!c)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
 		c[i] = s1[i];
 		i++;
-
 	}
-	while(s2[j] != '\0')
+	while (s2[j] != '\0')
 	{
 		c[i + j] = s2[j];
 		j++;
 	}
 	c[i + j] = '\0';
-	return c;
+	return (c);
 }
 
-/*int main()
-{
-	char x[] = "hello";
-	char y[] = "you";
+// int main()
+// {
+// 	char x[] = "hello ";
+// 	char y[] = "you";
 
-	printf("%s\n", ft_strjoin(x, y));
-}*/
+// 	printf("%s\n", ft_strjoin(x, y));
+// }
+// Allocates (with malloc(3)) and returns a new
+// string, which is the result of the concatenation
+// of ’s1’ and ’s2’.

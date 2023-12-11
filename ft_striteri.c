@@ -6,7 +6,7 @@
 /*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 09:25:50 by diatco            #+#    #+#             */
-/*   Updated: 2023/12/01 10:04:29 by diatco           ###   ########.fr       */
+/*   Updated: 2023/12/06 11:28:07 by diatco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,8 @@ int main()
 	printf("%s\n", s);
 	return 0;
 }*/
+
+// Applies the function ’f’ on each character of
+// the string passed as argument, passing its index
+// as first argument. Each character is passed by
+// address to ’f’ to be modified if necessary

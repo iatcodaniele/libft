@@ -6,13 +6,13 @@
 /*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 10:46:15 by diatco            #+#    #+#             */
-/*   Updated: 2023/12/01 11:17:46 by diatco           ###   ########.fr       */
+/*   Updated: 2023/12/06 10:35:03 by diatco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_printn(int n, int fd)
+void	ft_print_nbr(int n, int fd)
 {
 	n += 48;
 	write(fd, &n, 1);
@@ -33,16 +33,20 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 10)
 	{
-		ft_printn(n, fd);
+		ft_print_nbr(n, fd);
 	}
 	else
 	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_printn(n % 10, fd);
+		ft_print_nbr(n % 10, fd);
 	}
 }
-
+// #include <limits.h>
 // int main()
 // {
 // 	ft_putnbr_fd(INT_MIN, 1);
 // }
+
+// 0 = standard input
+// 1 = standard output
+// 2 = stadnard error

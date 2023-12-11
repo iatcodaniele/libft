@@ -6,7 +6,7 @@
 /*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 08:43:17 by diatco            #+#    #+#             */
-/*   Updated: 2023/12/01 10:23:10 by diatco           ###   ########.fr       */
+/*   Updated: 2023/12/06 11:28:10 by diatco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 		free(str);
 // 		return 0;
 // }
+
+// Applies the function ’f’ to each character of the
+// string ’s’, and passing its index as first argument
+// to create a new string (with malloc(3)) resulting
+// from successive applications of ’f’.

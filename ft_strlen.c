@@ -6,19 +6,20 @@
 /*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 15:24:22 by diatco            #+#    #+#             */
-/*   Updated: 2023/11/19 15:24:26 by diatco           ###   ########.fr       */
+/*   Updated: 2023/11/27 12:44:58 by diatco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int i = 0;
+	int	i;
 
-	while(str[i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }

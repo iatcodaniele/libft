@@ -1,41 +1,50 @@
-#include <string.h>
-#include <stdio.h>
-/*The strnstr() function locates the first	occurrence of the  null-termi-
-       nated  string little in the string big, where not more than len charac-
-       ters are	searched.  Characters that appear after	a `\0'	character  are
-       not  searched.*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: diatco <diatco@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/27 10:13:35 by diatco            #+#    #+#             */
+/*   Updated: 2023/12/06 11:31:55 by diatco           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*If little is an empty string, big is returned; if little	occurs nowhere
-       in big, NULL is returned; otherwise a pointer to	the first character of
-       the first occurrence of little is returned.*/
+#include "libft.h"
 
-
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-        size_t  j; //little
-        size_t  i; //big
+	size_t	j;
+	size_t	i;
 
-        i = 0;
-        if (little[i] == 0)
-                return ((char *)big); //if little is an empty string, big is returned 
-        while (big[i] && i < len) //searches big until len bytes
-        {
-                j = 0;
-                while (big[i + j] == little[j] && (i + j) < len) //compares characters from both big and little while iterating through them
-                {
-                        if (little[j + 1] == '\0') //if next byte is end of string little
-                                return ((char *)big + i); //pointer to the first character of first occurence of little
-                        j++; //if a match is found, it increments j to check if any further matches from little are present
-                }
-                i++; //i is incremented and therefore compared to j until either a match is found or it exits 
-        }
-        return (NULL); //if little exists but occurs nowhere in big, NULL is returned
+	i = 0;
+	if (little[i] == 0)
+		return ((char *)big);
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (big[i + j] == little[j] && (i + j) < len)
+		{
+			if (little[j + 1] == '\0')
+				return ((char *)big + i);
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }
 
-int main()
-{
-    char *x = "hello jinx";
-    char *y = "jinx";
+// int main()
+// {
+//     char *x = "hello jinx";
+//     char *y = "";
 
-    printf("%s\n", ft_strnstr(x, y, 10));
-}
+//     printf("%s\n", ft_strnstr(x, y, 10));
+// }
+// The strnstr() function locates the first occurrence
+//      of the null-terminated string little in the string
+//      big, where not more than len characters are searched.
+// If little is an empty string, big is returned; if
+//      little occurs nowhere in big, NULL is returned; oth‐
+//      erwise a pointer to the first character of the first
+//      occurrence of little is returned.
