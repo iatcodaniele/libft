@@ -18,8 +18,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void*))
 	{
 		while (lst)
 		{
-			f(lst -> content);
-			lst = lst->next;
+			f(lst -> content); //modiefies the content of each node using the function
+			lst = lst->next; //moves forward
 		}
 	}
 }
