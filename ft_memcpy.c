@@ -31,12 +31,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int main()
-{
-	char x[] = "abcdef";
-	char y[] = "hello";
-	ft_memcpy(x, y, 2);
+// int main()
+// {
+// 	char x[] = "abcdef";
+// 	char y[] = "hello";
+// 	ft_memcpy(x, y, 2);
 
-	printf("%s%p\n", x, ft_memcpy(x, y ,2));
-	printf("%s%p\n", x, memcpy(x, y ,2));
-}
+// 	printf("%s%p\n", x, ft_memcpy(x, y ,2));
+// 	printf("%s%p\n", x, memcpy(x, y ,2));
+// }
