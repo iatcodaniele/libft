@@ -20,9 +20,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	{
 		while (*lst)
 		{
-			new = (*lst)->next;
-			ft_lstdelone(*lst, del);
-			*lst = new;
+			new = (*lst)->next; //saves the next element in the list //this is so that we can move forward in the list
+			ft_lstdelone(*lst, del); //deletes the current element //^if we were to delete immediately there wouldn't be a ref point
+			*lst = new; //moves to the next element
 		}
 	}
 	*lst = NULL;
