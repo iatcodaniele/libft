@@ -18,12 +18,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (new == NULL)
 		return ;
-	if (*lst == NULL)
-		*lst = new;
+	if (*lst == NULL) //if the list is empty
+		*lst = new; //add new as first node
 	else
 	{
-		last = ft_lstlast(*lst);
-		last -> next = new;
+		last = ft_lstlast(*lst); //if the node is the last one
+		last -> next = new; //insert the pointer to new
 	}
 }
 
