@@ -16,12 +16,12 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 
-	new_node = (t_list *)malloc(sizeof(t_list) * 1);
+	new_node = (t_list *)malloc(sizeof(t_list) * 1); //allocating space for new list
 	if (!new_node)
 		return (NULL);
-	new_node -> content = content;
-	new_node -> next = NULL;
-	return (new_node);
+	new_node -> content = content; //assigning content to its variable
+	new_node -> next = NULL; //assigning NULL to pointer
+	return (new_node); //creates a list with one node
 }
 
 // int main()
