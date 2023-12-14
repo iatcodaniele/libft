@@ -20,7 +20,7 @@ static unsigned int	size(int nb)
 	if (nb == 0)
 		return (1);
 	if (nb < 0)
-		i++;
+		i++; //counts the number of negative digits
 	while (nb != 0)
 	{
 		nb /= 10;
@@ -41,8 +41,8 @@ char	*ft_itoa(int nbr)
 		return (NULL);
 	if (nbr < 0)
 	{
-		number[0] = '-';
-		n = -nbr;
+		number[0] = '-'; //places the minus sign in position 0
+		n = -nbr; //stores the negative number inside n
 	}
 	else
 		n = nbr;
@@ -51,8 +51,8 @@ char	*ft_itoa(int nbr)
 	number[i] = '\0';
 	while (n != 0)
 	{
-		number[i - 1] = (n % 10) + 48;
-		n /= 10;
+		number[i - 1] = (n % 10) + 48; //modulo takes the last digit and inserts it in reverse in the array
+		n /= 10; //trashes the last digit
 		i--;
 	}
 	return (number);
