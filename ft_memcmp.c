@@ -23,13 +23,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str2 = (unsigned char *)s2;
 	while (i < n && str1[i] == str2[i])
 	{
-		i++;
+		i++; //moves forward while the characters from both memory areas match
 	}
-	if (i == n)
+	if (i == n) //checks if the loop stopped because of lack of matching characters
 	{
-		return (0);
+		return (0); //if i==n no match was found, return 0
 	}
-	return (str1[i] - str2[i]);
+	return (str1[i] - str2[i]); //subtracts the pointers to the first char that doesn't match
 }
 /*#include <stdio.h>
 int main()
