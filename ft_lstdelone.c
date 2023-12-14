@@ -15,8 +15,8 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst)
-		del(lst -> content);
-	free (lst);
+		del(lst -> content); //uses free function to "delete" the content of the node
+	free (lst); //frees the list *after freeing the singular node*
 }
 
 // void del(void *content)
