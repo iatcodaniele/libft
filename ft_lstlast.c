@@ -18,9 +18,9 @@ t_list	*ft_lstlast(t_list *lst)
 		return (NULL);
 	while (lst)
 	{
-		if (lst -> next == NULL)
-			return (lst);
-		lst = lst -> next;
+		if (lst -> next == NULL) //if pointer points to NULL(means its the last one)
+			return (lst); //it returns current node
+		lst = lst -> next; //moves forward
 	}
 	return (lst);
 }
