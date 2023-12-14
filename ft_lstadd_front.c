@@ -16,11 +16,11 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (*lst)
 	{
-		new -> next = *lst;
-		*lst = new;
+		new -> next = *lst; //place 'new' before the first node by giving it a pointer to first node
+		*lst = new; //first node becomes 'new' node
 	}
 	else
-		*lst = new;
+		*lst = new; //if the list is empty, insert new as only node
 }
 
 // int main()
