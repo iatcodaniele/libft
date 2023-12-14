@@ -25,8 +25,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	if (d > s)
 	{
-		while (n--)
-			d[n] = s[n];
+		while (n--) //if dest buffer is larger than src string
+			d[n] = s[n]; //copies the chars from src string backwards into the buffer
 	}
 	else
 	{
@@ -39,15 +39,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char x[] = "abcdef";
-	char y[] = "hello";
-	ft_memmove(x, y, 2);
-	printf("%s%p\n", x, ft_memmove(x, y, 2));
-	printf("%s%p\n", x, memmove(x, y, 2));
-}
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+// 	char x[] = "abcdef";
+// 	char y[] = "hello";
+// 	ft_memmove(x, y, 2);
+// 	printf("%s%p\n", x, ft_memmove(x, y, 2));
+// 	printf("%s%p\n", x, memmove(x, y, 2));
+// }
 // The  memmove() function copies 
 // n bytes from memory area src to memory area dest.  
