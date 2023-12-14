@@ -17,12 +17,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*s1;
 	size_t	i;
 
-	s1 = (char *)s;
+	s1 = (char *)s; //casting to char so we can scan it like a string
 	i = 0;
 	while (i < n)
 	{
-		if ((unsigned char)s1[i] == (unsigned char)c)
-			return (&s1[i]);
+		if ((unsigned char)s1[i] == (unsigned char)c) //casting to unsigned char cause the manual said so
+			return (&s1[i]); //return pointer to first instance of c character
 		i++;
 	}
 	return (NULL);
