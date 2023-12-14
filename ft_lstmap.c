@@ -23,15 +23,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	while (lst)
 	{
-		f_result = f(lst->content);
-		new_element = ft_lstnew(f_result);
-		if (!new_element)
+		f_result = f(lst->content); //stores result of function-modified content
+		new_element = ft_lstnew(f_result); //stores result variable inside new list
+		if (!new_element) //if function fails to return modified node content
 		{
-			ft_lstclear(&new_list, del);
-			del(f_result);
+			ft_lstclear(&new_list, del); //the list is deleted
+			del(f_result); //the node is freed
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, new_element);
+		ft_lstadd_back(&new_list, new_element); //adds result to the back of new list
 		lst = lst -> next;
 	}
 	return (new_list);
