@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		m[i] = f(i, s[i]);
+		m[i] = f(i, s[i]); //stores results of function inside allocated memory area
 		i++;
 	}
 	m[i] = '\0';
