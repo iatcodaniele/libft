@@ -21,13 +21,13 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	res = 0;
 	while (src[res] != '\0')
 	{
-		res++;
+		res++; //determines total length of src
 	}
 	if (size == 0)
 	{
 		return (res);
 	}
-	while (src[i] != '\0' && i < size - 1)
+	while (src[i] != '\0' && i < size - 1) // size - 1 to leave space for null terminator
 	{
 		dest[i] = src[i];
 		i++;
