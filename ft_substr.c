@@ -18,24 +18,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	i = 0;
-	if (start >= ft_strlen(s))
+	if (start >= ft_strlen(s)) //no substring
 	{
-		start = ft_strlen(s);
+		start = ft_strlen(s); //creates empty string
 		len = 0;
 	}
-	if (start + len > ft_strlen(s))
+	if (start + len > ft_strlen(s)) //substring extends beyond main string
 	{
-		len = ft_strlen(s) - start;
-	}
-	sub = ft_calloc(len + 1, sizeof(char));
+		len = ft_strlen(s) - start; //adjusting substring so that it ends at the end of s
+	}					//maximum possible length of substring that doesn't extend beyond s
+	sub = ft_calloc(len + 1, sizeof(char)); //allocating memory for all substring characters and setting memory area to 0
 	if (!sub)
 		return (NULL);
-	while (i < len && s[start + i])
+	while (i < len && s[start + i]) //s[start + i] ensures we don't copy past the original string, accessing each character from s from the start index
 	{
 		sub[i] = s[start + i];
 		i++;
 	}
-	sub[i] = '\0';
+	sub[i] = '\0'; //redundant since calloc sets memory area to all zeroes
 	return (sub);
 }
 
