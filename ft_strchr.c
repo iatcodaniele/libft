@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	if (a == '\0')
 	{
-		return (str + ft_strlen(str));
+		return (str + ft_strlen(str)); //if c is the null character, it return a pointer to the ending null character
 	}
 	while (*str)
 	{
