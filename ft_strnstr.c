@@ -23,13 +23,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] && i < len)
 	{
 		j = 0;
-		while (big[i + j] == little[j] && (i + j) < len)
+		while (big[i + j] == little[j] && (i + j) < len) //i+j adds "little" index to current big index
 		{
 			if (little[j + 1] == '\0')
 				return ((char *)big + i);
 			j++;
 		}
-		i++;
+		i++; //mismatch is found, i moves forward to check next character for a match in little
 	}
 	return (NULL);
 }
@@ -37,7 +37,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // int main()
 // {
 //     char *x = "hello jinx";
-//     char *y = "";
+//     char *y = "llo";
 
 //     printf("%s\n", ft_strnstr(x, y, 10));
 // }
