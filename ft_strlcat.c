@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	destlen = ft_strlen(dest); //storing length of strings in local variables
 	srclen = ft_strlen(src);
 	i = 0;
-	if (destlen < size)
+	if (destlen < size) //checks if dest buffer is already full or overflowing
 	{
 		srclen += destlen; //if length of dest buffer is bigger than size, sum up length of both buffers(man instructions)
 	}
