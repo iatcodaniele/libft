@@ -37,6 +37,22 @@ void ft_putstr_fd(char *s, int fd)
 // int main()
 // {
 // 	char s[] = "hello";
-// 	ft_putstr_fd(s, STDOUT_FILENO);
+// 	int fd;
+
+// 	fd = open("outputstr.txt", O_WRONLY | O_CREAT, 0644);
+
+// 	if(fd == -1)
+// 	{
+// 		ft_putstr_fd("Failed to open file\n", STDERR_FILENO);
+// 		return 1;
+// 	}
+
+// 	ft_putstr_fd(s, fd);
+// 	close(fd);
 // 	return 0;
-// }
+// } 
+
+//writes directly to file descriptor
+//0_WRONLY - open for writing only
+//O_CREAT - create file if it doesn't exist
+//0644 - permissions to use - owner can read and write, other can read
