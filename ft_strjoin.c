@@ -23,14 +23,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	c = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!c)
 		return (NULL);
-	while (s1[i] != '\0')
+	while (s1[i] != '\0') //copies the first string to buffer
 	{
 		c[i] = s1[i];
 		i++;
 	}
 	while (s2[j] != '\0')
 	{
-		c[i + j] = s2[j];
+		c[i + j] = s2[j]; //copies 2nd string to buffer after 1st string
 		j++;
 	}
 	c[i + j] = '\0';
