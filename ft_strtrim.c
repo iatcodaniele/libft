@@ -26,10 +26,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i++;
 	while (i <= end && ft_strrchr(set, (int) s1[end]))
 		end--;
-	trim = malloc(sizeof(char) * (end - i + 2));
+	trim = malloc(sizeof(char) * (end - i + 2)); //+2 : 1 because when we subtract i from end we lose one character + 1 because of null terminator
 	if (!trim)
 		return (NULL);
-	ft_strlcpy(trim, (char *)s1 + i, (end - i + 2));
+	ft_strlcpy(trim, (char *)s1 + i, (end - i + 2)); //copies now trimmed string into trim from current i to current length + 2
 	trim[end + 1] = '\0';
 	return (trim);
 }
