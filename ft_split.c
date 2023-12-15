@@ -15,7 +15,7 @@
 static size_t	word_count(const char *str, char c)
 {
 	int		i;
-	int		word;
+	int		word; //flag variable
 	size_t	counter;
 
 	i = 0;
@@ -23,10 +23,10 @@ static size_t	word_count(const char *str, char c)
 	counter = 0;
 	while (str[i] != '\0')
 	{
-		if (!word && str[i] != c)
+		if (!word && str[i] != c) //if flag = 0 and no delimiter is found
 		{
-			word = 1;
-			counter++;
+			word = 1; 
+			counter++; //counts characters
 		}
 		else if (word && str[i] == c)
 			word = 0;
@@ -57,18 +57,18 @@ static void	ft_free(char **split)
 	i = 0;
 	while (split[i])
 	{
-		free(split[i]);
+		free(split[i]); //frees each character
 		i++;
 	}
-	free(split);
+	free(split); //frees entire array
 }
 
 int	check_malloc(char **array, int j, int *index)
 {
 	*index = -1;
-	if (!array[j - 1])
+	if (!array[j - 1]) 
 	{
-		ft_free(array);
+		ft_free(array); //frees entire array if previous element failed to be allocated 
 		return (0);
 	}
 	return (1);
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
 			array[j++] = word_dup(s, index, i);
-			if (!check_malloc(array, j, &index))
+			if (!check_malloc(array, j, &index)) //if allocation of previous word fails ^65
 				return (NULL);
 		}
 	}
