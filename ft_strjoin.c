@@ -33,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		c[i + j] = s2[j]; //copies 2nd string to buffer after 1st string
 		j++;
 	}
-	c[i + j] = '\0';
+	c[i + j] = '\0'; //placing the null terminator at the end of concatenated string: i + j is total length of concatenated string
 	return (c);
 }
 
