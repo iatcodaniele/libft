@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	word_count(const char *str, char c)
+static size_t	word_count(const char *str, char c) //determines space needed for allocation
 {
 	int		i;
 	int		word; //flag variable
@@ -90,10 +90,10 @@ char	**ft_split(char const *s, char c)
 	while (++i <= ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
-			index = i;
+			index = i; //start of word
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			array[j++] = word_dup(s, index, i);
+			array[j++] = word_dup(s, index, i); //copies word from current index up to i(that is delimiter)
 			if (!check_malloc(array, j, &index)) //if allocation of previous word fails ^65
 				return (NULL);
 		}
