@@ -24,11 +24,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	i = 0;
 	while (s1cpy[i] && s2cpy[i]
-		&& s1cpy[i] == s2cpy[i] && i < n)
+		&& s1cpy[i] == s2cpy[i] && i < n) //if both strings exist and a match is found
 		i++;
-	if (i < n)
+	if (i < n) //no match was found or one of the strings have ended
 	{
-		return (s1cpy[i] - s2cpy[i]);
+		return (s1cpy[i] - s2cpy[i]); 
 	}
 	else
 		return (0);
