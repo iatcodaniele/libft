@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	if (c == '\0')
 	{
-		return ((char *)&s[i]);
+		return ((char *)&s[i]); //returns pointer to end of string(i is lenght of str)
 	}
 	while (i >= 0)
 	{
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 		{
 			return ((char *)&s[i]);
 		}
-		i--;
+		i--; //iterates backwards to look for c
 	}
 	return (NULL);
 }
