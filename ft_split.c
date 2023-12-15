@@ -102,16 +102,19 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
+
 //  int main()
 //  {
-//  		char *s = "hello all    guys";
-//          int i = 0;
-//          char **result = ft_split(s, ' ');
+// 	char *s = "this is a sentence with no real purpose";
+// 	char **result = ft_split(s, ' ');
+// 	int i = 0;
 
-//          while (result[i])
-//          {
-//  			printf("%s\n", result[i]);
-//  			i++;
-//  		}
-//  		ft_free (result);
+// 	while(result[i])
+// 	{
+// 		ft_putstr_fd(result[i], 1);
+// 		ft_putchar_fd('\n', 1);
+// 		i++;
+// 	}
+// 	free(result);
+// 	return 0;
 // }
