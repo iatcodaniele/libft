@@ -18,17 +18,17 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	unsigned int	srclen;
 	unsigned int	i;
 
-	destlen = ft_strlen(dest);
+	destlen = ft_strlen(dest); //storing length of strings in local variables
 	srclen = ft_strlen(src);
 	i = 0;
 	if (destlen < size)
 	{
-		srclen += destlen;
+		srclen += destlen; //if length of dest buffer is bigger than size, sum up length of both buffers(man instructions)
 	}
 	else
-		srclen += size;
-	while (src[i] != '\0' && (destlen + 1) < size)
-	{
+		srclen += size; // if length of dest buffer is equal or smaller than size, sum up size and src length(to get size of desired destination buffer)
+	while (src[i] != '\0' && (destlen + 1) < size) //checks if there is at least one more space left in the destination buffer for the null terminator after the current character from `src` is copied.
+	{						//to leave space for the null terminator; if there isn't the loop stops and adds null terminator
 		dest[destlen++] = src[i++];
 	}
 	dest[destlen] = '\0';
