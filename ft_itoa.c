@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static unsigned int	size(int nb)
+static unsigned int	size(int nb) //helper function to determine size of string to be allocated
 {
 	int	i;
 
@@ -20,7 +20,7 @@ static unsigned int	size(int nb)
 	if (nb == 0)
 		return (1);
 	if (nb < 0)
-		i++; //counts the number of negative digits
+		i++; //it increments i to account for the minus sign that will be part of the string
 	while (nb != 0)
 	{
 		nb /= 10;
@@ -36,7 +36,7 @@ char	*ft_itoa(int nbr)
 	unsigned int		n;
 
 	i = size(nbr);
-	number = malloc(sizeof(char) * (i + 1));
+	number = malloc(sizeof(char) * (i + 1)); //allocating size of string + 1 for null character
 	if (!number)
 		return (NULL);
 	if (nbr < 0)
@@ -51,7 +51,7 @@ char	*ft_itoa(int nbr)
 	number[i] = '\0';
 	while (n != 0)
 	{
-		number[i - 1] = (n % 10) + 48; //modulo takes the last digit and inserts it in reverse in the array
+		number[i - 1] = (n % 10) + 48; //modulo takes the last digit and stores it at i-1 position of the array
 		n /= 10; //trashes the last digit
 		i--;
 	}
