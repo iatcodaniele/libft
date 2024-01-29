@@ -18,12 +18,12 @@ void	*ft_memset(void *s, int c, size_t n)
 	size_t			i;
 
 	i = 0;
-	p = (unsigned char *)s;
+	p = (unsigned char *)s; //p is used to modify memory area inside function
 	while (i < n)
 	{
 		p[i++] = (unsigned char )c;
 	}
-	return (s);
+	return (s); //s is returned after being modiefied using p casted
 }
 
 /*int main()
