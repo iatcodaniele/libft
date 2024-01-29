@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t number, size_t size)
+void	*ft_calloc(size_t number, size_t size) /* number of elements and the size of each element*/
 {
 	void	*array;
 
-	array = malloc(number * size);
+	array = malloc(number * size); /*total amount of memory to be allocated*/
 	if (array == NULL)
 		return (NULL);
 	else
-		ft_bzero(array, number * size);
+		ft_bzero(array, number * size); /*sets memory block 'array' of 'number*size' size to 0*/
 	return (array);
 }
 /*int	main()
