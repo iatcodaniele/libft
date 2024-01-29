@@ -23,7 +23,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	{
 		p[i++] = (unsigned char )c;
 	}
-	return (s); //s is returned after being modiefied using p casted
+	return (s); //s is returned after being modified using p casted
 }
 
 /*int main()
