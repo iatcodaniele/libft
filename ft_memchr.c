@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*s1;
 	size_t	i;
 
-	s1 = (char *)s; //casting to char so we can scan it like a string
+	s1 = (char *)s; //casting to char to scan it like a string inside function
 	i = 0;
 	while (i < n)
 	{
