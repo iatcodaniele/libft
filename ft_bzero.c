@@ -21,8 +21,8 @@ void	ft_bzero(void *s, size_t n)
 	p = s;
 	while (i < n)
 	{
-		*p++ = 0;
-		n--;
+		*p++ = 0; /*sets byte to 0 and moves to next one*/
+		n--; /*ensures that the loop will only run for n iterations*/
 	}
 }
 
